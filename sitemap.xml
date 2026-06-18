@@ -3,33 +3,48 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://odeonhealth.org/</loc>
-    <lastmod>2026-06-13</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://odeonhealth.org/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://odeonhealth.org/"/>
+  </url>
+  <url>
+    <loc>https://odeonhealth.org/#institutions</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://odeonhealth.org/#academy</loc>
-    <lastmod>2026-06-13</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://odeonhealth.org/#assessment</loc>
-    <lastmod>2026-06-13</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://odeonhealth.org/#about</loc>
-    <lastmod>2026-06-13</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://odeonhealth.org/#contact</loc>
-    <lastmod>2026-06-13</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://assessment.odeonhealth.org/</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://assessment.odeonhealth.org/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://assessment.odeonhealth.org/"/>
   </url>
 </urlset>

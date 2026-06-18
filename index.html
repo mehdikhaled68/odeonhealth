@@ -6,7 +6,7 @@
 
 <!-- Primary meta -->
 <title>ODEON Health — Digital Health Credentialling for European Clinicians</title>
-<meta name="description" content="Europe's first standardised digital health education and credentialling framework for clinicians. Free self-assessment. CME-accredited modules. Built by practising clinicians.">
+<meta name="description" content="Is your hospital digitally ready? ODEON's free 10-minute self-assessment benchmarks your clinicians across 6 domains. CME-accredited credential pathway. Institutional enrolment 2027.">
 <meta name="keywords" content="digital health education, clinician credentialling, CME accreditation, digital health competence, European health workforce, DHSAT, ODEON Academy, Greece digital health, EU digital health training">
 <meta name="author" content="ODEON — Outcome-Driven eHealth Observatory & Network A.M.K.E.">
 <link rel="canonical" href="https://odeonhealth.org/">
@@ -21,6 +21,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="ODEON Health — Digital Health Academy for European Clinicians">
 <meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="el_GR">
 <meta property="og:site_name" content="ODEON Health">
 
 <!-- Twitter / X -->
@@ -875,17 +876,88 @@ a{text-decoration:none;color:inherit;}
 .hero-bg-img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;}
 .hero-bg-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,61,58,0.82) 0%,rgba(26,92,88,0.65) 55%,rgba(15,61,58,0.78) 100%);}
 .hero .w{position:relative;z-index:1;}
-@media(max-width:920px){
-  .inst-slider-outer{padding:0;}
-  .inst-slide-img{height:auto !important;object-fit:contain !important;object-position:top center;}
+
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.faq-item{border:1px solid var(--border);border-radius:4px;background:#fff;overflow:hidden;}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;font-size:14px;font-weight:500;color:var(--ink);cursor:pointer;list-style:none;gap:12px;line-height:1.4;}
+.faq-q::-webkit-details-marker{display:none;}
+.faq-q::after{content:'+';font-size:18px;color:var(--teal);flex-shrink:0;transition:transform .2s;}
+details[open] .faq-q::after{content:'-';}
+.faq-a{padding:0 20px 16px;font-size:13px;color:#555;line-height:1.65;border-top:1px solid var(--border);}
+details[open] .faq-a{padding:12px 20px 16px;}
+@media(max-width:760px){.faq-grid{grid-template-columns:1fr;}}
+
+
+
+  .inst-slide-img{height:380px !important;object-fit:contain !important;object-position:top center;background:#0a0a0a;}
   .inst-arrow{width:32px;height:32px;font-size:20px;}
   .inst-arrow-prev{left:6px !important;}
   .inst-arrow-next{right:6px !important;}
 }
-@media(max-width:480px){
-  .inst-slide-img{height:auto !important;}
+
+}
+
   .inst-arrow{width:28px;height:28px;font-size:18px;}
 }
+
+
+/* ── SLIDER FIXED HEIGHT — prevents page jump on mobile ── */
+/* Desktop stays at 520px with cover */
+/* Mobile: fixed container height, img absolutely positioned inside */
+
+.inst-slide{display:none;position:relative;overflow:hidden;}
+.inst-slide.active{display:block;}
+
+@media(max-width:920px){
+  .inst-slider{background:#0a0a0a;}
+  .inst-slider-outer{padding:0 32px;}
+
+  /* Lock the slide to a fixed height — tallest slide ratio 0.599 */
+  /* At ~860px content width → 860 * 0.599 ≈ 515 → use 420px conservative */
+  .inst-slide{height:420px;}
+  .inst-slide-img{
+    position:absolute;
+    top:0;left:0;
+    width:100%;
+    height:calc(100% - 36px); /* leave room for footer */
+    object-fit:contain;
+    object-position:top center;
+    background:#0a0a0a;
+  }
+  .inst-slide-footer{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    height:36px;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+  }
+  .inst-mock-chip{
+    bottom:40px; /* sits above footer */
+  }
+  .inst-arrow{width:32px;height:32px;font-size:20px;}
+  .inst-arrow-prev{left:-28px;}
+  .inst-arrow-next{right:-28px;}
+}
+
+@media(max-width:640px){
+  .inst-slider-outer{padding:0 20px;}
+  .inst-slide{height:300px;}
+  .inst-arrow-prev{left:-18px;}
+  .inst-arrow-next{right:-18px;}
+}
+
+@media(max-width:420px){
+  .inst-slider-outer{padding:0;}
+  .inst-slide{height:240px;}
+  .inst-arrow{width:28px;height:28px;font-size:18px;}
+  .inst-arrow-prev{left:4px;}
+  .inst-arrow-next{right:4px;}
+}
+
 </style>
 </head>
 <body>
@@ -978,22 +1050,24 @@ a{text-decoration:none;color:inherit;}
     <a href="#institutions">Institutions</a>
     <a href="#academy">Academy</a>
     <a href="#assessment">Assessment</a>
+    <a href="#faq">FAQ</a>
     <a href="#authors" class="disabled" style="opacity:.38;pointer-events:none;cursor:default;" title="Coming soon">Authors</a>
     <a href="#contact">Contact</a>
     <div class="nav-auth-wrap">
       <span class="nav-login-link">Log in</span>
       <span class="nav-register-btn">Register</span>
     </div>
+  </div>
   <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" onclick="toggleMenu()">
     <span></span><span></span><span></span>
   </button>
-  </div>
 </nav>
 <div class="nav-mobile-menu" id="nav-mobile-menu">
   <a href="#about" onclick="closeMenu()">About</a>
   <a href="#institutions" onclick="closeMenu()">Institutions</a>
   <a href="#academy" onclick="closeMenu()">Academy</a>
   <a href="#assessment" onclick="closeMenu()">Assessment</a>
+  <a href="#faq" onclick="closeMenu()">FAQ</a>
   <a href="#authors" class="disabled" onclick="return false;" style="opacity:.38;cursor:default;" title="Coming soon">Authors</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
   <div class="nav-mobile-auth">
@@ -1020,7 +1094,8 @@ a{text-decoration:none;color:inherit;}
       <!-- Left: headline + CTAs -->
       <div class="hero-left">
         <span class="eyebrow eyebrow-white">Europe's first clinician-authored digital health credential</span>
-        <h1 class="hero-headline">Digital health is<br>changing medicine.<br><em>Are you ready?</em></h1>
+        <h1 class="sr-only">ODEON Academy — Europe's Digital Health Credentialling Standard for Clinicians</h1>
+<p class="hero-headline" aria-hidden="true">Digital health is<br>changing medicine.<br><em>Are you ready?</em></p>
         <p class="hero-quote">&ldquo;Mastering technology. So it disappears into better outcomes.&rdquo;</p>
         <p class="hero-sub">Find out where you stand &mdash; free, in under 10 minutes.</p>
         <div class="hero-cta-row">
@@ -1064,6 +1139,7 @@ a{text-decoration:none;color:inherit;}
   <div class="w">
     <span class="eyebrow">For Medical Societies &amp; Hospitals</span>
     <h2 style="color:var(--teal);margin-bottom:10px;">A hospital performs at the level of its clinicians.</h2>
+    <p style="font-size:15px;font-weight:500;color:var(--ink);margin-bottom:16px;max-width:640px;">ODEON Academy provides hospitals and medical societies with a standardised framework to assess, train, and credential their clinical workforce in digital health — from baseline assessment to CME-accredited modules and certified specialist tracks.</p>
     <p class="inst-scale" style="margin-top:12px;color:#444;"><strong style="color:var(--ink);">Individual digital gaps compound.</strong> When clinicians share a common framework — the same vocabulary, the same foundational concepts — workflows improve measurably. Think of driving: every driver has passed the same test, internalised the same rules. That shared standard is what makes traffic function. <strong>ODEON is that standard for digital health.</strong></p>
 
     <div class="inst-three-col">
@@ -1131,7 +1207,7 @@ a{text-decoration:none;color:inherit;}
     <div style="margin-top:52px;">
       <span class="eyebrow" style="margin-bottom:8px;display:block;">Institutional Analytics</span>
       <h3 style="color:var(--teal);font-family:'Cormorant Garamond',serif;font-weight:400;font-size:22px;margin-bottom:6px;font-style:italic;">"Know where your clinicians stand. Track how they improve."</h3>
-      <p style="font-size:14px;color:#555;max-width:600px;margin-bottom:28px;">As institutions enrol, ODEON builds Greece's first national dataset of clinical digital competence — and the first EU-level benchmark. Institutional reports are the documented evidence base for EU funding applications.</p>
+      <p style="font-size:14px;color:#555;max-width:600px;margin-bottom:28px;"><strong>ODEON will publish Greece's first national benchmark dataset for clinical digital competence in 2027</strong> — the first of its kind in the EU. As institutions enrol, this dataset grows. Institutional analytics reports serve as the documented evidence base for EU funding applications.</p>
       <div class="inst-slider-outer">
       <!-- Prev arrow -->
       <button class="inst-arrow inst-arrow-prev" onclick="instNav(-1)" aria-label="Previous">&#8249;</button>
@@ -1199,7 +1275,8 @@ a{text-decoration:none;color:inherit;}
     <div class="section-title-block" style="text-align:left;">
       <span class="eyebrow">It all starts with clinicians</span>
       <h2 style="color:rgba(255,255,255,.92);">Three reasons clinicians need this now</h2>
-    <p style="max-width:640px;margin-bottom:44px;font-size:20px;font-style:italic;font-family:'Cormorant Garamond',serif;font-weight:300;color:rgba(232,208,138,.75);letter-spacing:.01em;">Making technology work for you and your patients.</p>
+    <p style="max-width:640px;margin-bottom:8px;font-size:15px;font-weight:500;color:rgba(240,236,227,.85);">Clinicians who are underprepared for digital health tools lose 3–5 hours per week, have higher burnout risk, and operate under regulatory obligations most have never been briefed on.</p>
+    <p style="max-width:640px;margin-bottom:44px;font-size:19px;font-style:italic;font-family:'Cormorant Garamond',serif;font-weight:300;color:rgba(232,208,138,.75);letter-spacing:.01em;">Making technology work for you and your patients.</p>
     </div>
     <div class="why-grid">
 
@@ -1577,6 +1654,63 @@ a{text-decoration:none;color:inherit;}
 </section>
 
 <!-- ═══════════════════════════════════
+     FAQ
+═══════════════════════════════════ -->
+<section id="faq">
+<div style="background:var(--cream);padding:72px 0;border-top:1px solid var(--border);">
+  <div class="w">
+    <span class="eyebrow">Common questions</span>
+    <h2 style="color:var(--teal);margin-bottom:40px;">Frequently asked questions</h2>
+    <div class="faq-grid">
+
+      <details class="faq-item">
+        <summary class="faq-q">What is the ODEON Digital Health Self-Assessment?</summary>
+        <div class="faq-a">The ODEON DHSAT is a free, standardised 10-minute assessment for clinicians. It measures digital health competence across six domains and maps results to a personalised credential level — no preparation needed.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">What are the five credential levels?</summary>
+        <div class="faq-a">Level 1 (Formative), Level 2 (Intermediate), and Level 3 (Proficient) form the foundational pathway — CME-credited, SAT entry. Level 4 (Specialist Fellow) and Level 5 (Senior Fellow) are examination-based certifications on specialist and strategic tracks, requiring Levels 1–3 completion.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Is the ODEON Academy CME-accredited?</summary>
+        <div class="faq-a">Yes. All modules are CME-credited. Accreditation is in progress with PIS (Panhellenic Medical Society) as the primary body, with EACCME for international recognition from Year 2.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">How do hospitals enrol their clinical staff?</summary>
+        <div class="faq-a">ODEON operates on an institutional pathway for Levels 1–3. Hospitals and medical associations enrol cohorts directly and receive anonymised, domain-level analytics on their clinical workforce. Institutional enrolment opens Q1 2027. Contact <a href="mailto:info@odeonhealth.org" style="color:var(--teal);">info@odeonhealth.org</a>.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">What EU funding is available for digital health training?</summary>
+        <div class="faq-a">Several active EU programmes make ODEON training procurement-eligible: the Digital Europe Programme, EU4Health 2021–2027, Erasmus+ VET partnerships, and national Recovery and Resilience Facility budgets. Institutional analytics reports serve as the evidence base for applications.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Who authors the modules?</summary>
+        <div class="faq-a">All modules are authored by practising clinicians — doctors, nurses, or allied health professionals — with at least 10 years of digital health experience. Every module is peer-reviewed by the ODEON Content Review Board.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">What is the difference between Level 4 and Level 5?</summary>
+        <div class="faq-a">Level 4 (Specialist Fellow) offers five specialist tracks including Interoperability, Clinical AI Governance, and Telemedicine. Level 5 (Senior Fellow) offers two strategic tracks: Digital Health Strategy and Health Tech Innovation. Both require completing Levels 1–3 and passing an examination.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Does the self-assessment cover all five levels?</summary>
+        <div class="faq-a">The DHSAT covers Levels 1–3 only. It identifies your entry point into the foundational pathway. Levels 4 and 5 require examination and certification after completing Levels 1–3.</div>
+      </details>
+
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+<!-- ═══════════════════════════════════
      AUTHORS (staged, hidden from nav)
 ═══════════════════════════════════ -->
 <!-- ================== AUTHORS ================== -->
@@ -1692,6 +1826,7 @@ a{text-decoration:none;color:inherit;}
     Greek Not-for-Profit · G.E.MI. 194135838000 · AFM 803301500<br>
     © 2026 ODEON Health. All rights reserved.
   </div>
+  <div class="footer-updated" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(232,208,138,.40);margin-top:6px;">Last updated: June 2026</div>
   <div class="footer-url">odeonhealth.org</div>
 </footer>
 
@@ -1784,7 +1919,27 @@ document.addEventListener("click",function(e){
       "email": "info@odeonhealth.org",
       "contactType": "General enquiries"
     },
-    "sameAs": ["https://www.linkedin.com/company/odeon-health"]
+    "sameAs": ["https://www.linkedin.com/company/odeon-health"],
+    "alternateName": ["ODEON Academy", "ODEON — Outcome-Driven eHealth Observatory & Network"],
+    "identifier": {
+      "@type": "PropertyValue",
+      "name": "G.E.MI.",
+      "value": "194135838000"
+    },
+    "knowsAbout": [
+      "digital health education",
+      "clinical digital competence",
+      "CME accreditation",
+      "digital health credentialling",
+      "European health workforce",
+      "HIMSS EMRAM",
+      "electronic health records",
+      "EU digital health regulation"
+    ],
+    "numberOfEmployees": {
+      "@type": "QuantitativeValue",
+      "value": 3
+    }
   },
   {
     "@context": "https://schema.org",
@@ -1917,6 +2072,176 @@ document.addEventListener("click",function(e){
     box.style.boxShadow = '';
   });
 })();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the ODEON Digital Health Self-Assessment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The ODEON Digital Health Self-Assessment Tool (DHSAT) is a free, standardised 10-minute assessment for clinicians. It measures digital health competence across six domains — Digital Professionalism, Leadership, Data Governance, Person-Centred Care, Cybersecurity, and AI in Clinical Practice — and maps results to a personalised credential pathway."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the five levels of the ODEON digital health credential?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The ODEON Academy offers five credential levels: Level 1 (Formative) — foundational digital health literacy; Level 2 (Intermediate) — applied digital tools and data concepts; Level 3 (Proficient) — digital health knowledge in clinical workflows; Level 4 (Specialist Fellow) — examined specialist tracks for clinical leads; Level 5 (Senior Fellow) — strategic and governance-level certification for senior leaders."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the ODEON Academy CME-accredited?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All ODEON Academy modules are CME-credited. Levels 1 through 3 earn stackable CME-credited completion badges recognised across Europe. CME accreditation is in progress with PIS (Panhellenic Medical Society) as the primary accrediting body, with EACCME (European Accreditation Council for Continuing Medical Education) from Year 2."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can hospitals enrol their clinical staff in ODEON Academy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ODEON Academy operates on an institutional pathway for Levels 1 to 3. Hospitals, clinics, and medical associations enrol cohorts of clinicians directly. Institutions receive aggregated, anonymised domain-level analytics on their workforce. Institutional enrolment opens Q1 2027. Contact info@odeonhealth.org to express interest."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What EU funding is available for hospital digital health training?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Several active EU programmes make ODEON training procurement-eligible: the Digital Europe Programme (DIGITAL-2026-SKILLS-10), EU4Health 2021–2027, Erasmus+ VET partnerships, and national Recovery and Resilience Facility budgets. Institutional analytics reports from ODEON serve as the documented evidence base for these funding applications. Total EU digital health investment exceeds €8.1 billion through 2027."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who authors the ODEON Academy modules?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All ODEON Academy modules are authored by practising clinicians and prominent health IT professionals with a minimum of 10 years of digital health experience. Authors must be registered clinicians — doctors, nurses, or allied health professionals. Each module undergoes peer review by the ODEON Content Review Board before publication."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between ODEON Level 4 and Level 5?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Level 4 (Specialist Fellow) is examination-based certification across five specialist tracks: Interoperability and Standards, Clinical Coding and Diagnostic Classification, Telemedicine and Remote Care, Clinical Data and AI Governance, and Clinical Decision Intelligence and Integrated Care. Level 5 (Senior Fellow) covers two strategic tracks: Digital Health Strategy, Operations and Governance; and Health Tech Innovation and Assessment. Both levels require completion of Levels 1 to 3."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the ODEON self-assessment cover all five credential levels?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The ODEON Digital Health Self-Assessment Tool (DHSAT) covers Levels 1 to 3 only. It maps your results to a starting level in the foundational pathway. Levels 4 and 5 require examination and certification after completing Levels 1 to 3."
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "ODEON Digital Health Credential Pathway",
+  "description": "Europe's first clinician-authored, CME-accredited digital health credentialling framework. Five levels from foundational awareness to senior strategic leadership. Built for practising clinicians in European healthcare settings.",
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "ODEON Academy",
+    "url": "https://odeonhealth.org"
+  },
+  "educationalLevel": "Professional Development",
+  "audience": {
+    "@type": "EducationalAudience",
+    "audienceType": "Healthcare professionals, clinicians, nurses, allied health professionals"
+  },
+  "inLanguage": ["en", "el"],
+  "isAccessibleForFree": false,
+  "hasCourseInstance": [
+    {
+      "@type": "CourseInstance",
+      "name": "Level 1 — Formative",
+      "description": "Foundational digital health literacy. 3 modules. CME-credited. SAT entry.",
+      "courseMode": "online"
+    },
+    {
+      "@type": "CourseInstance",
+      "name": "Level 2 — Intermediate",
+      "description": "Applied digital tools and data concepts. 4 modules. CME-credited.",
+      "courseMode": "online"
+    },
+    {
+      "@type": "CourseInstance",
+      "name": "Level 3 — Proficient",
+      "description": "Digital health in clinical workflows. 5 modules. CME-credited.",
+      "courseMode": "online"
+    },
+    {
+      "@type": "CourseInstance",
+      "name": "Level 4 — Specialist Fellow",
+      "description": "Five specialist tracks. Examination and certification. Requires Levels 1-3.",
+      "courseMode": "online"
+    },
+    {
+      "@type": "CourseInstance",
+      "name": "Level 5 — Senior Fellow",
+      "description": "Two strategic leadership tracks. Examination and certification. Requires Levels 1-3.",
+      "courseMode": "online"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "ODEON Health — Digital Health Credentialling for European Clinicians",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".hero-headline", ".why-card h3", "h2"]
+  },
+  "url": "https://odeonhealth.org"
+}
+</script>
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dr. Mehdi Khaled",
+    "jobTitle": "Co-Founder and Executive Director",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "ODEON Health",
+      "url": "https://odeonhealth.org"
+    },
+    "description": "Medical doctor specialised in internal medicine and software engineer with 28 years of global digital health leadership experience, including former Global Chief Medical Officer at Oracle Health.",
+    "knowsAbout": ["digital health", "electronic health records", "clinical informatics", "health IT", "digital health credentialling"],
+    "sameAs": ["https://www.linkedin.com/in/mehdikhaled/"]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Prof. Elias Panagiotopoulos",
+    "jobTitle": "Co-Founder and President",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "ODEON Health",
+      "url": "https://odeonhealth.org"
+    },
+    "description": "Emeritus Professor of Orthopaedic Surgery. Former Board Member and Former Chair, Regionalization Committee, Global Fragility Fracture Network. Four decades of clinical leadership in Greece and Europe.",
+    "knowsAbout": ["orthopaedic surgery", "clinical leadership", "digital health governance", "medical education"],
+    "sameAs": ["https://www.linkedin.com/in/elias-panagiotopoulos-07928326/"]
+  }
+]
 </script>
 </body>
 </html>
