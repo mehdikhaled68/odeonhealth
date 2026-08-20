@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ODEON Health — XML Sitemap
+  Version: 1.1 | Date: 2026-08-19
+  Ref: ODEON-DOC-2026-015
+  Submit to: https://search.google.com/search-console
+  URL: https://odeonhealth.org/sitemap.xml
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://odeonhealth.org/</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://odeonhealth.org/" />
+    <xhtml:link rel="alternate" hreflang="el" href="https://odeonhealth.org/el/" />
+  </url>
+
+  <!-- Add additional odeonhealth.org pages below as the site grows -->
+
+</urlset>
