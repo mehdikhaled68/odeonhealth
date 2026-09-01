@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Privacy Policy — ODEON Health</title>
+<meta name="description" content="ODEON Health privacy policy.">
+<link rel="canonical" href="https://odeonhealth.org/privacy">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+a,a:hover,a:visited{text-decoration:none;}
+
+:root {
+  --teal:#1A5C58; --teal-dark:#0f3d3a; --teal-light:rgba(26,92,88,0.09);
+  --gold:#B8953A; --gold-light:#E8D08A; --gold-faint:rgba(184,149,58,0.13);
+  --ink:#0F0E0C; --paper:#FAF8F4; --cream:#F0ECE3; --sand:#D9D0BC;
+  --border:rgba(15,14,12,0.10);
+  --lv1:#CD7F32; --lv2:#64748B; --lv3:#B8953A;
+  --lv4-bg:#12103A; --lv4-fg:#A78BFA;
+  --lv5-bg:#080D22; --lv5-fg:#5BB8F5;
+  /* Dark section readable text */
+  --dark-text:#F0ECE3;
+  --dark-text-mid:rgba(240,236,227,0.80);
+  --dark-text-low:rgba(240,236,227,0.55);
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.65;font-size:17px;}
+
+/* NAV */
+.site-nav{position:sticky;top:0;z-index:100;background:var(--teal);padding:0 44px;display:flex;align-items:center;justify-content:space-between;height:70px;border-bottom:1px solid rgba(232,208,138,.15);}
+.nav-logo-wrap{height:46px;display:flex;align-items:center;}
+.nav-logo-wrap svg{height:46px !important;width:auto !important;}
+.nav-links{display:flex;align-items:center;gap:30px;}
+.nav-links a{font-family:'DM Sans',sans-serif;font-size:14px;letter-spacing:.03em;color:rgba(255,255,255,.78);text-decoration:none;transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold-light);}
+.nav-links a.disabled{opacity:.38;pointer-events:none;cursor:default;}
+.nav-auth-wrap{display:flex;align-items:center;margin-left:12px;position:relative;}
+.nav-auth-wrap::after{content:'Coming soon';position:absolute;bottom:-30px;left:50%;transform:translateX(-50%);background:rgba(15,14,12,.92);color:rgba(255,255,255,.75);font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;white-space:nowrap;padding:4px 10px;border-radius:2px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:200;}
+.nav-auth-wrap:hover::after{opacity:1;}
+.nav-login-link{font-family:'DM Sans',sans-serif;font-size:13px;padding:8px 14px;color:rgba(255,255,255,.60);cursor:not-allowed;pointer-events:none;white-space:nowrap;margin-left:20px;}
+.nav-register-btn{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;padding:8px 18px;background:transparent;border:1.5px solid rgba(255,255,255,.30);border-radius:3px;color:rgba(255,255,255,.55);cursor:not-allowed;pointer-events:none;white-space:nowrap;margin-left:8px;transition:all .2s;}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;margin-left:auto;}
+.nav-hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,.8);border-radius:2px;transition:all .25s;}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-hamburger.open span:nth-child(2){opacity:0;}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-mobile-menu{display:none;position:fixed;top:70px;left:0;right:0;background:var(--teal-dark);z-index:200;padding:20px 24px 28px;border-top:1px solid rgba(232,208,138,.15);box-shadow:0 8px 32px rgba(0,0,0,.3);}
+.nav-mobile-menu.open{display:block;}
+.nav-mobile-menu a{display:block;text-decoration:none;font-family:"DM Sans",sans-serif;font-size:16px;color:rgba(255,255,255,.82);padding:13px 0;border-bottom:1px solid rgba(255,255,255,.07);text-decoration:none;}
+.nav-mobile-menu a:last-child{border-bottom:none;}
+.nav-mobile-menu a.disabled{opacity:.38;pointer-events:none;}
+.nav-mobile-auth{display:flex;gap:12px;margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);}
+.nav-mobile-auth span{flex:1;text-align:center;padding:10px;font-family:"DM Sans",sans-serif;font-size:14px;color:rgba(255,255,255,.50);border:1px solid rgba(255,255,255,.22);border-radius:3px;cursor:not-allowed;}
+
+/* FOOTER */
+.site-footer{background:var(--ink);padding:44px 44px;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.footer-org{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;line-height:1.9;color:rgba(232,208,138,.80);}
+.footer-url{font-family:'DM Sans',sans-serif;font-size:14px;color:rgba(232,208,138,.65);letter-spacing:.04em;}
+
+@media(max-width:920px){
+  .site-nav{padding:0 20px;}
+  .nav-logo-wrap svg{height:38px !important;}
+  .nav-links,.nav-auth-wrap{display:none;}
+  .nav-auth-wrap{display:none;}
+  .nav-hamburger{display:flex;}
+  .w,.w-narrow{padding:0 20px;}
+  h1{font-size:36px !important;}
+  h2{font-size:28px !important;}
+}
+
+.doc-wrap{max-width:860px;margin:0 auto;padding:52px 44px 96px;}
+.doc-intro{margin-bottom:44px;padding-bottom:36px;border-bottom:1px solid rgba(15,14,12,.10);}
+.doc-intro h1{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,42px);font-weight:400;line-height:1.1;color:var(--ink,#0F0E0C);margin-bottom:12px;}
+.doc-intro p{font-size:14px;font-weight:300;line-height:1.75;color:rgba(15,14,12,.60);max-width:600px;}
+.doc-section{margin-bottom:48px;padding-bottom:40px;border-bottom:1px solid rgba(15,14,12,.08);}
+.doc-section:last-of-type{border-bottom:none;}
+.doc-num{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold,#B8953A);margin-bottom:8px;display:block;}
+.doc-section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.5vw,28px);font-weight:500;color:var(--teal,#1A5C58);margin-bottom:16px;line-height:1.15;}
+.doc-section p{font-size:14px;font-weight:300;line-height:1.75;margin-bottom:12px;}
+.doc-section p:last-child{margin-bottom:0;}
+.doc-section p strong{font-weight:500;}
+.doc-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13px;}
+.doc-table th{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold,#B8953A);padding:10px 12px;text-align:left;border-bottom:2px solid rgba(15,14,12,.10);background:var(--cream,#F0ECE3);}
+.doc-table td{padding:10px 12px;border-bottom:1px solid rgba(15,14,12,.08);font-size:13px;line-height:1.55;vertical-align:top;}
+.doc-table tr:last-child td{border-bottom:none;}
+.doc-table td:first-child{font-weight:500;}
+.doc-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin:12px 0;}
+.doc-list li{font-size:13.5px;font-weight:300;line-height:1.65;padding-left:18px;position:relative;}
+.doc-list li::before{content:'—';position:absolute;left:0;color:var(--gold,#B8953A);font-size:11px;top:2px;}
+.doc-callout{background:var(--cream,#F0ECE3);border-left:3px solid var(--teal,#1A5C58);padding:14px 18px;margin:16px 0;border-radius:0 4px 4px 0;}
+.doc-callout p{font-size:13px;line-height:1.65;margin:0;}
+.doc-callout p strong{color:var(--teal,#1A5C58);}
+.parties-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0;}
+.party-card{background:var(--cream,#F0ECE3);border:1px solid rgba(15,14,12,.10);border-radius:4px;padding:20px 22px;}
+.party-card h3{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold,#B8953A);margin-bottom:12px;}
+.party-card p{font-size:13px;line-height:1.65;}
+.sig-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:32px;}
+.sig-line{border-bottom:1px solid var(--ink,#0F0E0C);min-height:40px;margin-bottom:8px;}
+.sig-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold,#B8953A);margin-bottom:10px;display:block;}
+.sig-meta p{font-size:12px;color:rgba(15,14,12,.55);margin-bottom:4px;}
+@media(max-width:760px){
+  .doc-wrap{padding:36px 20px 72px;}
+  .parties-grid,.sig-grid{grid-template-columns:1fr;}
+}
+
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="/" class="nav-logo-wrap"><svg style="height:52px;width:auto;display:block;flex-shrink:0;" width="100%" height="100%" viewBox="0 0 1710 695" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/">
+    <g transform="matrix(1,0,0,1,1016.9,689.497)">
+        <g>
+            <g>
+                <path d="M114.125,0L114.125,-3.156L104.047,-3.156L104.047,-54.729C104.047,-67.812 100.443,-78.187 93.224,-86.307C86.005,-94.427 74.729,-99.99 63,-99.99C52.323,-99.99 42.703,-93.974 38.042,-86.005L38.042,-138.333L9.771,-138.333L9.771,-135.172L20.146,-135.172L20.146,-3.156L9.771,-3.156L9.771,0L48.115,0L48.115,-3.156L38.042,-3.156L38.042,-79.24C42.552,-90.365 52.474,-96.833 62.25,-96.833C70.818,-96.833 76.833,-92.172 79.99,-87.958C86.005,-79.844 86.156,-71.12 86.156,-59.844L86.156,0L114.125,0Z" style="fill:white;fill-rule:nonzero;"/>
+            </g>
+        </g>
+    </g>
+    <g transform="matrix(1,0,0,1,1159.59,689.497)">
+        <g>
+            <g>
+                <path d="M94.276,-47.062L94.276,-53.979C94.276,-72.021 89.464,-81.193 80.292,-89.615C73.073,-96.229 62.099,-99.99 52.474,-99.99C27.667,-99.99 10.526,-81.344 10.526,-55.781L10.526,-43.755C10.526,-29.62 13.682,-20.297 21.5,-11.729C28.87,-3.76 39.995,1.505 53.38,1.505C70.969,1.505 84.5,-7.818 92.62,-25.562L89.766,-26.917C81.193,-9.474 69.615,-1.656 53.828,-1.656C42.099,-1.656 34.734,-7.219 31.276,-15.937C28.719,-22.401 28.417,-30.672 28.417,-41.802L28.417,-47.062L94.276,-47.062ZM76.531,-50.219L28.417,-50.219L28.417,-61.948C28.417,-76.385 30.823,-83.75 35.484,-89.016C39.844,-93.974 45.406,-96.833 52.474,-96.833C60.146,-96.833 66.458,-93.375 70.37,-87.958C75.031,-81.646 76.531,-74.88 76.531,-60.745L76.531,-50.219Z" style="fill:white;fill-rule:nonzero;"/>
+            </g>
+        </g>
+    </g>
+    <g transform="matrix(1,0,0,1,1282.43,689.497)">
+        <g>
+            <g>
+                <path d="M76.531,-19.245C72.021,-8.12 62.099,-1.656 52.323,-1.656C43.755,-1.656 37.74,-6.318 34.583,-10.526C28.568,-18.646 28.417,-27.365 28.417,-38.641L28.417,-61.948C28.417,-76.385 30.823,-83.75 35.484,-89.016C39.844,-93.974 45.406,-96.833 52.474,-96.833C60.146,-96.833 66.458,-93.375 70.37,-87.958C75.031,-81.646 76.531,-74.88 76.531,-60.745L76.531,-19.245ZM94.427,-54.281C94.427,-68.713 91.271,-78.036 83,-87.057C75.328,-95.328 63.604,-99.99 52.474,-99.99C34.281,-99.99 17.891,-88.411 12.781,-71.573C10.974,-65.859 10.526,-61.198 10.526,-54.729L10.526,-43.755C10.526,-30.672 14.135,-20.297 21.349,-12.177C28.568,-4.057 39.844,1.505 51.573,1.505C62.25,1.505 72.021,-4.51 76.682,-12.479L76.682,0L104.802,0L104.802,-3.156L94.427,-3.156L94.427,-54.281Z" style="fill:white;fill-rule:nonzero;"/>
+            </g>
+        </g>
+    </g>
+    <g transform="matrix(1,0,0,1,1413.85,689.497)">
+        <g>
+            <g>
+                <path d="M48.115,0L48.115,-3.156L38.042,-3.156L38.042,-138.333L9.771,-138.333L9.771,-135.172L20.146,-135.172L20.146,-3.156L9.771,-3.156L9.771,0L48.115,0Z" style="fill:white;fill-rule:nonzero;"/>
+            </g>
+        </g>
+    </g>
+    <g transform="matrix(1,0,0,1,1483.77,689.497)">
+        <g>
+            <g>
+                <path d="M52.625,-12.63C52.177,-7.37 48.719,-4.057 44.208,-4.057C40.146,-4.057 35.786,-6.917 35.786,-14.135L35.786,-95.479L52.776,-95.479L52.776,-98.635L35.786,-98.635L35.786,-138.333L17.891,-138.333L17.891,-98.635L7.516,-98.635L7.516,-95.479L17.891,-95.479L17.891,-24.661C17.891,-18.193 18.495,-12.781 20.448,-8.719C23.906,-1.656 30.073,1.505 39.547,1.505C49.016,1.505 55.484,-4.661 55.932,-12.63L52.625,-12.63Z" style="fill:white;fill-rule:nonzero;"/>
+            </g>
+        </g>
+    </g>
+    <g transform="matrix(1,0,0,1,1565.26,689.497)">
+        <g>
+            <g>
+                <path d="M114.125,0L114.125,-3.156L104.047,-3.156L104.047,-54.729C104.047,-67.812 100.443,-78.187 93.224,-86.307C86.005,-94.427 74.729,-99.99 63,-99.99C52.323,-99.99 42.703,-93.974 38.042,-86.005L38.042,-138.333L9.771,-138.333L9.771,-135.172L20.146,-135.172L20.146,-3.156L9.771,-3.156L9.771,0L48.115,0L48.115,-3.156L38.042,-3.156L38.042,-79.24C42.552,-90.365 52.474,-96.833 62.25,-96.833C70.818,-96.833 76.833,-92.172 79.99,-87.958C86.005,-79.844 86.156,-71.12 86.156,-59.844L86.156,0L114.125,0Z" style="fill:white;fill-rule:nonzero;"/>
+            </g>
+        </g>
+    </g>
+    <g transform="matrix(1,0,0,1,-30.4974,478.159)">
+        <g>
+            <g>
+                <path d="M320.021,-185.437C320.021,-234.75 309.234,-266.599 280.984,-297.422C254.786,-325.672 214.719,-341.599 176.708,-341.599C114.552,-341.599 58.557,-302.042 41.094,-244.51C34.932,-224.99 33.391,-209.068 33.391,-186.979L33.391,-151.021C33.391,-101.708 44.177,-69.859 72.427,-39.042C98.625,-10.786 138.693,5.135 176.708,5.135C238.859,5.135 294.854,-34.417 312.318,-91.948C318.479,-111.469 320.021,-127.391 320.021,-149.479L320.021,-185.437ZM258.896,-124.823C258.896,-75.51 250.677,-50.338 234.75,-32.359C219.854,-15.411 200.849,-5.651 176.708,-5.651C150.51,-5.651 128.932,-17.463 115.578,-35.958C99.656,-57.531 94.516,-80.646 94.516,-128.932L94.516,-211.635C94.516,-260.948 102.734,-286.12 118.661,-304.099C133.557,-321.052 152.563,-330.812 176.708,-330.812C202.901,-330.812 224.479,-318.995 237.833,-300.505C253.76,-278.927 258.896,-255.812 258.896,-207.526L258.896,-124.823Z" style="fill:rgb(184,150,90);fill-rule:nonzero;"/>
+            </g>
+        </g>
+    </g>
+    <g transform="matrix(1,0,0,1,305.962,478.159)">
+        <g>
+            <g>
+                <path d="M97.083,-204.443C97.083,-242.969 97.599,-272.766 118.146,-300.505C128.932,-314.885 149.479,-330.812 178.76,-330.812C212.151,-330.812 246.052,-308.724 261.464,-270.708L261.464,-124.823C261.464,-75.51 253.245,-50.338 237.318,-32.359C222.422,-15.411 203.417,-5.651 179.276,-5.651C153.078,-5.651 131.5,-17.463 118.146,-35.958C102.224,-57.531 97.083,-80.646 97.083,-128.932L97.083,-204.443ZM322.589,-461.797L358.036,-461.797L358.036,-472.583L261.464,-472.583L261.464,-293.823C245.536,-321.052 212.661,-341.599 176.193,-341.599C136.125,-341.599 97.599,-322.588 72.943,-294.854C48.286,-267.115 35.958,-231.672 35.958,-186.979L35.958,-151.021C35.958,-101.708 46.745,-69.859 74.995,-39.042C101.193,-10.786 141.26,5.135 179.276,5.135C241.427,5.135 297.422,-34.417 314.885,-91.948C321.052,-111.469 322.589,-127.391 322.589,-149.479L322.589,-461.797Z" style="fill:rgb(184,150,90);fill-rule:nonzero;"/>
+            </g>
+        </g>
+    </g>
+    <g transform="matrix(1,0,0,1,652.182,478.159)">
+        <g>
+            <g>
+                <path d="M322.078,-160.781L322.078,-184.411C322.078,-246.052 305.641,-277.385 274.307,-306.151C249.651,-328.755 212.151,-341.599 179.276,-341.599C94.516,-341.599 35.958,-277.901 35.958,-190.573L35.958,-149.479C35.958,-101.193 46.745,-69.349 73.458,-40.068C98.625,-12.844 136.641,5.135 182.354,5.135C242.458,5.135 288.688,-26.713 316.427,-87.328L306.667,-91.948C277.385,-32.359 237.833,-5.651 183.896,-5.651C143.828,-5.651 118.661,-24.656 106.844,-54.448C98.115,-76.536 97.083,-104.792 97.083,-142.802L97.083,-160.781L322.078,-160.781ZM261.464,-171.568L97.083,-171.568L97.083,-211.635C97.083,-260.948 105.302,-286.12 121.229,-304.099C136.125,-321.052 155.13,-330.812 179.276,-330.812C205.474,-330.812 227.047,-318.995 240.401,-300.505C256.328,-278.927 261.464,-255.812 261.464,-207.526L261.464,-171.568Z" style="fill:rgb(184,150,90);fill-rule:nonzero;"/>
+            </g>
+        </g>
+    </g>
+    <g transform="matrix(1,0,0,1,-149,-658)">
+        <use xlink:href="#_Image1" x="1164" y="794" width="290px" height="349px"/>
+    </g>
+    <g transform="matrix(1,0,0,1,1319.46,478.159)">
+        <g>
+            <g>
+                <path d="M384.745,0L384.745,-10.786L350.328,-10.786L350.328,-185.953C350.328,-211.125 346.219,-235.781 339.031,-254.271C317.969,-306.151 265.573,-341.599 207.016,-341.599C148.453,-341.599 96.057,-306.151 74.995,-254.271C67.807,-235.781 63.698,-211.125 63.698,-185.953L63.698,-10.786L28.25,-10.786L28.25,0L159.24,0L159.24,-10.786L124.823,-10.786L124.823,-226.021C124.823,-291.771 159.24,-330.812 207.016,-330.812C254.786,-330.812 289.203,-291.771 289.203,-226.021L289.203,-10.786L254.786,-10.786L254.786,0L384.745,0Z" style="fill:white;fill-rule:nonzero;"/>
+            </g>
+        </g>
+    </g>
+    <g transform="matrix(0,-0.75,0.75,0,1155.68,319.861)">
+        <path d="M7.336,7.334L236.544,7.334" style="fill:none;fill-rule:nonzero;stroke:white;stroke-width:14.67px;"/>
+    </g>
+    <defs>
+        <image id="_Image1" width="290px" height="349px" xlink:href="data:image/png;base64,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"/>
+    </defs>
+</svg></a>
+  <div class="nav-links">
+    <a href="/#about">About</a>
+    <a href="/#academy">Academy</a>
+    <a href="assessment-tools.html">Assessment Tools</a>
+    <a href="/#authors" class="disabled" style="opacity:.38;pointer-events:none;cursor:default;" title="Coming soon">Authors</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/#contact">Contact</a>
+    <div class="nav-auth-wrap">
+      <span class="nav-login-link">Log in</span>
+      <span class="nav-register-btn">Register</span>
+    </div>
+  </div>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile-menu" id="nav-mobile-menu">
+  <a href="/#about" onclick="closeMenu()">About</a>
+  <a href="/#academy" onclick="closeMenu()">Academy</a>
+  <a href="assessment-tools.html" onclick="closeMenu()">Assessment Tools</a>
+  <a href="/#authors" class="disabled" onclick="return false;" style="opacity:.38;cursor:default;" title="Coming soon">Authors</a>
+  <a href="/#faq" onclick="closeMenu()">FAQ</a>
+  <a href="/#contact" onclick="closeMenu()">Contact</a>
+  <div class="nav-mobile-auth">
+    <span>Log in</span>
+    <span>Register</span>
+  </div>
+</div>
+
+<main class="doc-wrap">
+
+  <div class="doc-intro">
+    <h1>Privacy Policy</h1>
+    <p>ODEON Health A.M.K.E. (<strong>"ODEON Health"</strong>, <strong>"we"</strong>, <strong>"us"</strong>) is committed to protecting your personal data. This Privacy Policy explains what data we collect, why we collect it, how we use it, and what rights you have under the General Data Protection Regulation (EU) 2016/679 (<strong>"GDPR"</strong>) and applicable Greek data protection law.</p>
+  </div>
+
+  <!-- 1 -->
+  <div class="doc-section">
+    <span class="doc-num">01</span>
+    <h2>Who We Are</h2>
+    <p>ODEON Health A.M.K.E. is a Greek non-profit association (Αστική Μη Κερδοσκοπική Εταιρεία) registered in ODEON Health A.M.K.E., 84400 Paros, Cyclades | Greece.</p>
+    <table class="doc-table">
+      <tr><th>Detail</th><th>Information</th></tr>
+      <tr><td>Full legal name</td><td>ODEON Health A.M.K.E.</td></tr>
+      <tr><td>Registration</td><td>G.E.MI. 194135838000 · AFM 803301500</td></tr>
+      <tr><td>Registered address</td><td>ODEON Health A.M.K.E., 84400 Paros, Cyclades | Greece</td></tr>
+      <tr><td>Data Controller</td><td>ODEON A.M.K.E.</td></tr>
+      <tr><td>GDPR contact</td><td>Mehdi Khaled · <a href="mailto:privacy@odeonhealth.org" style="color:var(--teal);">privacy@odeonhealth.org</a></td></tr>
+      <tr><td>Website</td><td><a href="https://odeonhealth.org" style="color:var(--teal);">odeonhealth.org</a></td></tr>
+    </table>
+  </div>
+
+  <!-- 2 -->
+  <div class="doc-section">
+    <span class="doc-num">02</span>
+    <h2>What Data We Collect and Why</h2>
+    <p>We collect personal data in the following contexts. We only collect what is necessary for the stated purpose.</p>
+
+    <table class="doc-table" style="margin-top:20px;">
+      <tr><th>Context</th><th>Data collected</th><th>Purpose</th><th>Legal basis</th></tr>
+      <tr>
+        <td>Website contact form</td>
+        <td>Name, email address, role/title, institution name, message content</td>
+        <td>Responding to institutional enquiries and partnership requests</td>
+        <td>Legitimate interests (Art. 6(1)(f) GDPR)</td>
+      </tr>
+      <tr>
+        <td>DHSAT / AI-SAT assessment (L1–L3, institutional deployment)</td>
+        <td>Assessment responses; competency scores by domain; assigned level; professional role; department (as provided by deploying institution)</td>
+        <td>Generating individual and institutional capability reports; tracking competency development</td>
+        <td>Legitimate interests (Art. 6(1)(f) GDPR) — processing is covered by the institutional contract between ODEON Health and the deploying institution</td>
+      </tr>
+      <tr>
+        <td>DHSAT / AI-SAT assessment (L4–L5, direct individual enrolment)</td>
+        <td>As above, plus identity verification data for credentialling</td>
+        <td>Issuing verifiable digital credentials; tracking specialist pathway progress</td>
+        <td>Explicit consent (Art. 6(1)(a) GDPR) — provided at point of individual registration</td>
+      </tr>
+      <tr>
+        <td>ODEON Health Academy — course participation</td>
+        <td>Course completion records; module scores; learning activity logs</td>
+        <td>Issuing credentials; generating progress reports; CME record-keeping</td>
+        <td>Contract performance (Art. 6(1)(b)) and/or legitimate interests (Art. 6(1)(f))</td>
+      </tr>
+      <tr>
+        <td>Digital credentials (badges)</td>
+        <td>Name; credential type and level; date of issue; issuing institution</td>
+        <td>Issuing and verifying Open Badges / IMS Global credentials</td>
+        <td>Contract performance (Art. 6(1)(b))</td>
+      </tr>
+      <tr>
+        <td>Website session</td>
+        <td>Session cookies (strictly necessary); browser type; approximate location (country level)</td>
+        <td>Maintaining session state; ensuring site security</td>
+        <td>Legitimate interests (Art. 6(1)(f)) — strictly necessary cookies do not require consent</td>
+      </tr>
+    </table>
+
+    <div class="doc-callout" style="margin-top:20px;">
+      <p><strong>Note on institutional deployments (L1–L3):</strong> Where ODEON Health deploys the assessment on behalf of an institutional partner, the institution is responsible for informing their clinical workforce of the assessment and its purpose. ODEON Health acts as data controller and the institution acts as deploying partner under a Data Processing Agreement.</p>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="doc-section">
+    <span class="doc-num">03</span>
+    <h2>How We Use Your Data</h2>
+    <ul class="doc-list">
+      <li>To respond to enquiries submitted via the website contact form.</li>
+      <li>To generate individual Digital Health Capability Reports for clinicians completing an ODEON Health assessment.</li>
+      <li>To generate aggregated, anonymised Institutional Capability Reports for institutional partners.</li>
+      <li>To issue and maintain verifiable digital credentials (Open Badges / IMS Global standard).</li>
+      <li>To track learning progress and course completion within the ODEON Health Academy.</li>
+      <li>To fulfil CME accreditation reporting obligations (where applicable).</li>
+      <li>To improve our assessment instruments and curriculum through aggregated, anonymised analysis.</li>
+      <li>To comply with applicable legal and regulatory obligations.</li>
+    </ul>
+    <p style="margin-top:16px;">We do not use your personal data for automated decision-making or profiling that produces legal or similarly significant effects.</p>
+  </div>
+
+  <!-- 4 -->
+  <div class="doc-section">
+    <span class="doc-num">04</span>
+    <h2>Who We Share Your Data With</h2>
+    <p>We do not sell personal data. We share personal data only with the following categories of recipients, all of whom are contractually bound to process data in accordance with GDPR.</p>
+
+    <table class="doc-table" style="margin-top:16px;">
+      <tr><th>Recipient</th><th>Role</th><th>Location</th><th>Data shared</th></tr>
+      <tr><td>OVM France</td><td>Database hosting sub-processor</td><td>France (EU)</td><td>Assessment and user data</td></tr>
+      
+      <tr><td>Eurekos</td><td>Learning Management System (LMS)</td><td>Denmark (EU)</td><td>Course completion, learning logs</td></tr>
+      
+      <tr><td>Certifier</td><td>Digital credential issuance</td><td>AWS Dublin (EU)</td><td>Name, credential type, issue date</td></tr>
+      <tr><td>Institutional partners</td><td>Deploying organisations (L1–L3)</td><td>EU / EEA</td><td>Aggregated institutional reports only — no individual identifiable data shared without explicit consent</td></tr>
+      <tr><td>Regulatory bodies</td><td>Where legally required</td><td>EU / EEA</td><td>Minimum necessary to comply with legal obligation</td></tr>
+    </table>
+
+    <p style="margin-top:16px;">All sub-processors are located within the EU or EEA, or operate under Standard Contractual Clauses (SCCs) where applicable.</p>
+  </div>
+
+  <!-- 5 -->
+  <div class="doc-section">
+    <span class="doc-num">05</span>
+    <h2>How Long We Keep Your Data</h2>
+    <table class="doc-table">
+      <tr><th>Data category</th><th>Retention period</th><th>Rationale</th></tr>
+      <tr><td>Contact form submissions</td><td>2 years from last contact</td><td>Standard correspondence retention</td></tr>
+      <tr><td>Assessment responses and scores</td><td>5 years from date of assessment</td><td>Standard professional records retention; supports longitudinal competency tracking</td></tr>
+      <tr><td>Digital credentials</td><td>Duration of credential validity + 5 years</td><td>Credential verification and audit purposes</td></tr>
+      <tr><td>Course completion records</td><td>5 years from course completion</td><td>CME accreditation records; professional development evidence</td></tr>
+      <tr><td>Session cookies</td><td>Session duration only</td><td>Strictly necessary; no persistent tracking</td></tr>
+    </table>
+    <p style="margin-top:16px;">After the applicable retention period, data is securely deleted or anonymised. Anonymised, aggregated data (from which no individual can be identified) may be retained indefinitely for research and curriculum development purposes.</p>
+  </div>
+
+  <!-- 6 -->
+  <div class="doc-section">
+    <span class="doc-num">06</span>
+    <h2>Cookies</h2>
+    <p>ODEON Health uses session cookies only. These are strictly necessary for the operation of our website and assessment platform. They expire at the end of your browser session and do not track you across other websites.</p>
+    <p>We do not use analytics cookies, advertising cookies, or any third-party tracking technologies. No cookie consent banner is required.</p>
+  </div>
+
+  <!-- 7 -->
+  <div class="doc-section">
+    <span class="doc-num">07</span>
+    <h2>Your Rights Under GDPR</h2>
+    <p>As a data subject, you have the following rights. To exercise any of them, contact us at <a href="mailto:privacy@odeonhealth.org" style="color:var(--teal);">privacy@odeonhealth.org</a>. We will respond within 30 days.</p>
+    <table class="doc-table" style="margin-top:16px;">
+      <tr><th>Right</th><th>What it means</th></tr>
+      <tr><td>Access (Art. 15)</td><td>Request a copy of the personal data we hold about you.</td></tr>
+      <tr><td>Rectification (Art. 16)</td><td>Request correction of inaccurate or incomplete data.</td></tr>
+      <tr><td>Erasure (Art. 17)</td><td>Request deletion of your personal data where there is no overriding legitimate reason to retain it.</td></tr>
+      <tr><td>Portability (Art. 20)</td><td>Request your data in a structured, machine-readable format.</td></tr>
+      <tr><td>Restriction (Art. 18)</td><td>Request that we limit processing of your data in certain circumstances.</td></tr>
+      <tr><td>Objection (Art. 21)</td><td>Object to processing based on legitimate interests.</td></tr>
+      <tr><td>Withdraw consent</td><td>Where processing is based on consent (L4–L5), withdraw it at any time without affecting prior processing.</td></tr>
+    </table>
+    <div class="doc-callout" style="margin-top:16px;">
+      <p>You also have the right to lodge a complaint with the <strong>Hellenic Data Protection Authority (HDPA)</strong> — <a href="https://www.dpa.gr" style="color:var(--teal);">www.dpa.gr</a> — or the supervisory authority in your country of residence.</p>
+    </div>
+  </div>
+
+  <!-- 8 -->
+  <div class="doc-section">
+    <span class="doc-num">08</span>
+    <h2>Data Security</h2>
+    <p>ODEON Health implements appropriate technical and organisational measures to protect personal data against unauthorised access, disclosure, alteration, or destruction. These include:</p>
+    <ul class="doc-list">
+      <li>Encryption of data in transit (TLS) and at rest.</li>
+      <li>Access controls limiting data access to authorised personnel only.</li>
+      <li>Sub-processor selection criteria requiring ISO 27001 certification or equivalent (Eurekos: ISO 27001 / 27017 / 27701 certified).</li>
+      <li>Regular review of data processing activities and sub-processor agreements.</li>
+    </ul>
+  </div>
+
+  <!-- 9 -->
+  <div class="doc-section">
+    <span class="doc-num">09</span>
+    <h2>International Transfers</h2>
+    <p>All primary data processing takes place within the EU or EEA. Where any sub-processor operates infrastructure outside the EEA (for example, Certifier via AWS Dublin), ODEON Health ensures adequate safeguards are in place through Standard Contractual Clauses (SCCs) as approved by the European Commission.</p>
+    <p>ODEON Health's services are currently available to institutions within the EU and EEA. Worldwide availability is anticipated in a future phase; this policy will be updated accordingly.</p>
+  </div>
+
+  <!-- 10 -->
+  <div class="doc-section">
+    <span class="doc-num">10</span>
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we do, we will revise the version number and date at the top of the document and, where changes are material, notify institutional partners directly. Continued use of ODEON Health services after any update constitutes acceptance of the revised policy.</p>
+    <p>This policy was last updated in <strong>September 2026</strong>.</p>
+  </div>
+
+  <!-- 11 -->
+  <div class="doc-section">
+    <span class="doc-num">11</span>
+    <h2>Contact</h2>
+    <p>For any questions about this Privacy Policy or to exercise your data subject rights:</p>
+    <ul class="doc-list">
+      <li><strong>Email:</strong> <a href="mailto:privacy@odeonhealth.org" style="color:var(--teal);">privacy@odeonhealth.org</a></li>
+      <li><strong>Contact:</strong> Mehdi Khaled, Executive Director</li>
+      <li><strong>Address:</strong> ODEON Health A.M.K.E., 84400 Paros, Cyclades | Greece</li>
+      <li><strong>Supervisory authority:</strong> Hellenic Data Protection Authority (HDPA) — <a href="https://www.dpa.gr" style="color:var(--teal);">www.dpa.gr</a></li>
+    </ul>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-org">
+    ODEON · Outcome-Driven eHealth Observatory &amp; Network A.M.K.E.<br>
+    Greek Not-for-Profit · G.E.MI. 194135838000 · AFM 803301500<br>
+    &copy; 2026 ODEON Health. All rights reserved.
+  </div>
+  <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px;">
+    <div style="display:flex;gap:20px;">
+      <a href="/privacy" class="footer-url">Privacy Policy</a>
+      <a href="/terms" class="footer-url">Terms of Use</a>
+    </div>
+    <a href="https://odeonhealth.org" class="footer-url">odeonhealth.org</a>
+  </div>
+</footer>
+
+<script>
+
+
+
+
+/* ── BIDIRECTIONAL SECTION SLIDE ── */
+(function(){
+  // Target every major section and key content blocks
+  var sections = document.querySelectorAll(
+    '.hero-inner, .inst-three-col, .why-grid, ' +
+    '.inst-emram, .inst-eu-funding, .inst-analytics, ' +
+    '.pathway-spine-wrap, .level-cards, .about-grid, ' +
+    '.founders-grid, .faq-grid, .sat-two-col'
+  );
+
+  sections.forEach(function(el){
+    el.classList.add('section-reveal');
+  });
+
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      var el = entry.target;
+      if(entry.isIntersecting){
+        // Slide up into view
+        el.classList.remove('hidden');
+        // Small delay to ensure transition runs after hidden removed
+        requestAnimationFrame(function(){
+          requestAnimationFrame(function(){
+            el.classList.add('visible');
+          });
+        });
+      } else {
+        // Only reset if element has been visible before (avoids initial flicker)
+        if(el.classList.contains('visible')){
+          el.classList.remove('visible');
+          el.classList.add('hidden');
+        }
+      }
+    });
+  }, {
+    threshold: 0.08,
+    rootMargin: '0px 0px -60px 0px'
+  });
+
+  sections.forEach(function(el){ observer.observe(el); });
+})();
+
+/* ── PARALLAX HERO ── */
+(function(){
+  var bg = document.querySelector('.hero-bg-wrap');
+  if(!bg) return;
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY;
+    bg.style.transform = 'translateY(' + (y * 0.35) + 'px)';
+  }, {passive:true});
+})();
+
+
+
+
+</script>
+</body>
+</html>
